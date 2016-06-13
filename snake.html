@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+body{
+	padding: 0;
+	margin:0;
+
+}
+	.loadgame{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		background-image: url(./image/load.jpg);
+	}
+	.start{
+		position: absolute;
+		top: 500px;
+		width: 100%;
+		height: 50px;
+		text-align: center;
+	}
+	.loading{
+		display: none;
+	}
+	.scroll{
+		position: absolute;
+		left: 70px;
+		border-radius: 10%;
+		background:#43B134;
+		width: 40px;
+		height: 8px;
+	}
+	.startgame{
+		width: 100px;
+		height: 30px;
+		background:#43B134;
+		padding: 15px 50px;
+		box-shadow: 5px 5px 2px rgba(0,0,0,0.5);
+		font-family: Helvetica;
+		font-size: 20px;
+		font-weight: 900;
+		color: white;
+		word-spacing:5px;
+
+	}
+	.check +.loading{
+		position: absolute;
+		top: 450px;
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		display: block;
+
+	}
+	.check{
+		display: none;
+	}
+	.game{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		background-image: url(./image/game.jpg);
+		display: none;
+	}
+	.game .oprate{
+		width: 700px;
+		height: 500px;
+		background: #4CAF50;
+		margin: auto;
+		position: absolute;
+		top: 100px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 10px;
+		border-radius: 20%;
+	}
+	.title{
+		width: 100%;
+		height: 50px;
+		border-bottom: 1px solid #7C7878;
+
+	}
+	.title h2{
+		padding-left: 80px;
+	}
+	.choose{
+		margin-top: 15px;
+		width: 95.5%;
+		height: 350px;
+		background: white;
+		border-radius: 20%;
+		padding: 0 15px;
+		padding-top: 60px;
+
+	}
+	.choose .box,.sence,.speed{
+		width:95%;
+		height: 80px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #ccc;
+	}
+	.choose h6{
+		display: inline-block;
+	}
+	.speed{
+		border:none;
+	}
+	.choose .button,.choose .button1,.choose .button2{
+		width: 500px;
+		height: 100%;
+		display: inline-block;
+		position: relative;
+		left: 70px;
+		top: -44px;
+	}
+	.choose span{
+		display: inline-block;
+		width: 120px;
+		height: 40px;
+		background: #ccc;
+		border-radius: 15%;
+		margin-left: 30px;
+		line-height: 40px;
+		text-align: center;
+	}
+	.go{
+		position: absolute;
+		width: 150px;
+		height: 90px;
+		border-radius: 50%;
+		background: #4CAF50;
+		left: 800px;
+		top: 330px;
+		text-align: center;
+		line-height: 90px;
+		font-size: 30px;
+		cursor: pointer;
+		color: white;
+		font-weight: 700;
+
+	}
+	.choose .select{
+		background: #4CAF50;
+	}
+	.choose .select .yes{
+		opacity: 1;
+	}
+	 .yes{
+	 	/*display: none;*/
+	 	opacity: 0;
+		position: relative;
+		color:#FFC107 ;
+		top: -60px;
+		left: 60px;
+		font-size: 50px;
+	}
+	.go:hover{
+		background: #1B5E20;
+		font-size: 35px;
+	}
+
+
+
+	.show{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		background-image: url(./image/bc.jpg);
+		display: none;
+	}
+
+	.delay{
+		display: none;
+		font-size: 400px;
+		font-weight: 700;
+		color: yellow;
+		margin: auto;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		width: 500px;
+		height: 500px;
+		text-align: center;
+		line-height: 500px;
+	}
+
+	.showsence{
+		width: 600px;
+		margin: auto;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		/*background: white;*/
+		border: 3px solid rgba(255, 255, 255, 0.5);;
+		height: 600px;
+		z-index: 9999999;
+	}
+	.black{
+		width: 29px;
+		height: 29px;
+		background: rgba(156,29,176,0.5);
+		float: left;
+		margin:0 1px 1px 0;
+	}
+
+	.snake{
+		background: #3F51B5;
+		border-radius: 10%;
+	}
+	.food{
+		background: #FF9800;
+	}
+
+	.over{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		display: none;
+		/*background-image: url(./image/load.jpg);*/
+	}
+	.gameover{
+		width: 600px;
+		margin: auto;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		background: white;
+		border: 2px solid black;
+		height: 600px;
+	}
+	.back{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+
+	}
+	.backs img{
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+	}
+	.back .zhezhao{
+		width: 900px;
+		height: 500px;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: #070910;
+		opacity: 0.7;
+	}
+	.gushi{
+		width: 800px;
+		height: 500px;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.a{
+		font-size: 35px;
+		font-weight: 700;
+		color: white;
+		letter-spacing: 5px;
+		word-spacing:8px
+	}
+	.pingtai{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+		background-image: url(./image/pingtai.jpg);
+	}
+	.could{
+
+		position: absolute;;
+		left: 0;
+		top: 0;
+
+		right: 0;
+		height: 400px;
+		/*background: red;*/
+		z-index: 4;
+		display: none;
+	}
+	.shows + .could{
+		display: block;
+	}
+	.could .c1{
+		position: absolute;
+		top: 0;
+		left: 0px;
+		background: url(./image/cloud_1.png);
+		/*background-repeat: no-repeat;*/
+		z-index: 4;
+		width: 100%;
+		height: 100%;
+		animation: cloudmove 1000s linear infinite;
+	}
+	.could .c2{
+
+		position: absolute;
+		top: 0;
+		left: 0px;
+		background: url(./image/cloud_2.png);
+		/*background-repeat: no-repeat;*/
+		z-index: 4;
+		width: 100%;
+		height: 100%;
+		animation: cloudmove 400s linear infinite;
+	}
+	.could .end{
+		position: absolute;
+		top: 400px;
+		right: 80px;
+		background: url(./image/btn1.png);
+		width: 200px;
+		height: 70px;
+		z-index: 5;
+	}
+	.could .begin{
+		width: 200px;
+		height: 70px;
+		position: absolute;
+		top: 300px;
+		right: 80px;
+		background: url(./image/btn2.png);
+		z-index: 5;
+	}
+
+	@keyframes cloudmove {
+  0% {
+    background-position: 2000px 0; }
+  50% {
+    background-position: 0 0; }
+  100% {
+    background-position: -2000px 0; } }
+
+</style>
+<body>
+	<div class="loadgame">
+		<div class="start">
+			<span class="startgame">S t a r t   G a m e</span>
+		</div>
+		<div class="loading">
+			<h2>loading...</h2>
+			<div class="scroll"></div>
+		</div>
+
+	</div>
+<div class="show">
+<div class="showsence">
+
+</div>
+</div>
+
+
+<div class="could">
+	<div class="c1"></div>
+	<div class="c2"></div>
+	<div class="begin"></div>
+	<div class="end"></div>
+</div>
+
+
+</body>
+<script src="./js/jquery-1.12.0.js"></script>
+<script>
+$(function(){
+
+	var toid = function(x,y){
+		return(x+'-'+y)
+	}
+	var sence=$('.showsence')
+	var snake = [{x:0,y:0},{x:0,y:1},{x:0,y:2}];
+	var snakebody = {'0-0':true,'0-1':true,'0-2':true};
+
+
+	var food = {};
+	var dir = 40;
+	var timerId;
+	var hang = 20;
+	var num ;
+
+	function showsence(hang){
+		var
+		i = 0,
+		j,
+		wh = Math.floor(600/hang);
+		hang = hang||20,
+		sence.empty()
+		for(;i<hang;i++){
+			for( j = 0;j < hang;j++ ){
+				$('<div>')
+				.addClass('black')
+				.attr('id',toid(i,j))
+				.appendTo(sence)
+				.width(wh-1)
+				.height(wh-1)
+			}
+		}
+		sence.width(wh*hang).height(wh*hang)
+	}
+	showsence(20)
+
+	///////////////show snake
+	function showsnake(){
+		snake.forEach(function(v){
+			$('#'+v.x+'-'+v.y).addClass('snake')
+		})
+	}
+
+	///////////////showfood
+	function showfood(hang){
+		hang = hang||20;
+		do{
+			var x = Math.floor( Math.random()*hang )
+			var y = Math.floor( Math.random()*hang )
+		}while(snakebody['x+'-'+y'])
+		$('#'+x+'-'+y).addClass('food')
+		food={x:x,y:y}
+	}
+	showsnake()
+	showfood(20)
+
+
+
+
+	function move(){
+		var jiutou = snake[snake.length-1],
+		weiba,
+		xintou;
+		if(dir===40){
+			xintou = {x:jiutou.x+1,y:jiutou.y}
+		}else if(dir===39){
+			xintou = {x:jiutou.x,y:jiutou.y+1}
+		}else if(dir===38){
+			xintou = {x:jiutou.x-1,y:jiutou.y}
+		}else if(dir===37){
+			xintou = {x:jiutou.x,y:jiutou.y-1}
+		}
+		if(xintou.x>19||xintou.y>19||xintou.x<0||xintou.y<0){
+			alert('you are die')
+ 				clearInterval(timerId)
+ 				return;
+ 			}else{
+ 				snake.push(xintou)
+ 				weiba = snake.shift()
+ 				$('div').removeClass('snake')
+ 				showsnake()
+ 				if(xintou.x===food.x&&xintou.y===food.y){
+ 				eatfood()
+ 			}
+ 			}
+	}
+
+	function eatfood(){
+		$('.food').addClass('snake').removeClass('food')
+ 				snake.push(food)
+ 				showsnake()
+ 				showfood()
+	}
+
+	$(document).on('keydown',function(e){
+		if(e.keyCode>40||e.keyCode<37||Math.abs(e.keyCode-dir)===2){
+ 				return
+ 		}else if(e.keyCode===40||e.keyCode===39||e.keyCode===38||e.keyCode===37){
+ 			var num = e.keyCode;
+ 			dir = num;
+ 		}
+	})
+
+
+
+	var loadingGame = function(){
+		$(this).closest('div').addClass('check')
+		$('.scroll').animate({width:$(window).outerWidth()*0.9},2000).delay(1000).queue(function(){
+			$('.loadgame').hide().css('display','none');
+			$('.show').css('display','block').addClass('shows').dequeue();
+		})
+
+	}
+
+	var startGame = function(){
+		$('.game').animate({opacity:0},300).animate({'display':'none'},200).delay(300).queue(function(){
+
+			$('.show').css({'display':'block'},20)
+			$('.delay').css({'display':'block'},20)
+				if($('.delay').css('display')==="block"){
+					startDelay()
+				}
+				$(this).dequeue()
+			})
+
+
+	}
+	var timerId;
+	var startDelay = function(){
+		var i = 3;
+		var timer = setInterval(function(){
+			i = i-1
+			if(i===0){
+				$('.delay').text('GO').delay(500).queue(function(){
+					if($('.delay').text()==='GO'){
+						console.log(1)
+						clearInterval(timer)
+						 timerId = setInterval(function(){
+ 							move()
+ 						},200)
+					}
+					$(this).css({opacity:0},1000).dequeue()
+				})
+
+			}else{
+			$('.delay').text(i)
+			}
+		},1000)
+
+	}
+
+	var beginGame = function(){
+		timerId = setInterval(function(){
+			move();
+		},200)
+	}
+	var endGame = function(){
+		clearInterval(timerId)
+	}
+
+	$('.startgame').on('click',loadingGame)
+	$('.begin').on('click',beginGame)
+	$('.end').on('click',endGame)
+
+
+})
+
+</script>
+</html>

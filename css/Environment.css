@@ -1,0 +1,441 @@
+body,h1,h2,h3,h4,h5,h6,p,pre,ul,ol,li,dl,dt,dd,form,input,textarea,select,option{
+	padding: 0;
+	margin:0;
+	list-style:none;
+}
+a{
+	color: #666;
+	text-decoration: none;
+}
+img{
+	border:none;
+}
+h1, h2, h3, h4, h5, h6, input, textarea, select, button {
+	font-size: 100%;
+}
+.loadgame{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background-image: url(../image/load.jpg);
+}
+.start{
+	position: absolute;
+	top: 500px;	
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+.loading{
+	display: none;
+}
+.scroll{
+	position: absolute;
+	left: 70px;
+	top: 80px;
+	border-radius: 10%;
+	background:#43B134;
+	width: 40px;
+	height: 8px;
+}
+.startgame{
+	margin-left: 30px;
+	width: 100px;
+	height: 30px;
+	background:#43B134;
+	padding: 15px 50px;
+	box-shadow: 5px 5px 2px rgba(0,0,0,0.5);
+	font-family: Helvetica;
+	font-size: 20px;
+	font-weight: 900;
+	color: white;
+	word-spacing:5px;
+}
+.huanbao{
+	width: 100px;
+	height: 30px;
+	background:#43B134;
+	padding: 15px 50px;
+	box-shadow: 5px 5px 2px rgba(0,0,0,0.5);
+	font-family: Helvetica;
+	font-size: 20px;
+	font-weight: 900;
+	color: white;
+	word-spacing:5px;
+}
+.check +.loading{
+	position: absolute;
+	top: 450px;		
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	display: block;
+
+}
+.check{
+	display: none;
+}
+.game{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background-image: url(../image/game.jpg);
+	display: none;
+
+}
+.moshi{
+	width: 100%;
+	height: 100%;
+	background: red;
+}
+
+.moshi .top{
+	width: 100px;
+}
+.game .oprate{
+	width: 700px;
+	height: 500px;
+	background: #4CAF50;
+	margin: auto;
+	position: absolute;
+	top: 100px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 10px;
+	border-radius: 20%;
+}
+.title{
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #7C7878;
+	
+}
+.title h2{
+	padding-left: 80px;
+}
+.choose{
+	margin-top: 15px;
+	width: 95.5%;
+	height: 350px;
+	background: white;
+	border-radius: 20%;
+	padding: 0 15px;
+	padding-top: 60px;
+
+}
+.choose .box,.sence,.speed{
+	width:95%;
+	height: 80px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+.choose h6{
+	display: inline-block;
+}
+.speed{
+	border:none;
+}
+.choose .button,.choose .button1,.choose .button2{
+	width: 500px;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	left: 70px;
+	top: -44px;
+}
+.choose span{
+	display: inline-block;
+	width: 120px;
+	height: 40px;
+	background: #ccc;
+	border-radius: 15%;
+	margin-left: 30px;
+	line-height: 40px;
+	text-align: center;
+}
+.go{
+	position: absolute;
+	width: 150px;
+	height: 90px;
+	border-radius: 50%;
+	background: #4CAF50;
+	left: 800px;
+	top: 330px;
+	text-align: center;
+	line-height: 90px;
+	font-size: 30px;
+	cursor: pointer;
+	color: white;
+	font-weight: 700;
+
+}
+.choose .select{
+	background: #4CAF50;
+}
+.choose .select .yes{
+	opacity: 1;
+}
+.yes{
+	/*display: none;*/
+	opacity: 0;
+	position: relative;
+	color:#FFC107 ;
+	top: -60px;
+	left: 60px;
+	font-size: 50px;
+}
+.go:hover{
+	background: #1B5E20;
+	font-size: 35px;
+}
+
+
+
+.show{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background-image: url(../image/gamess.jpg);
+	/*display: none;*/
+}
+.gameopen.show{
+	display: block;
+}
+.delay{
+	display: none;
+	font-size: 400px;
+	font-weight: 700;
+	color: yellow;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	text-align: center;
+	line-height: 500px;
+}
+
+.showsence{
+	width: 800px;		
+	margin: auto;	
+	position: absolute;
+	left: 17px;
+	right: 0;
+
+	bottom: 0;
+
+	height: 550px;
+position: relative;
+top: 65px;
+}
+.black{
+	width: 29px;
+	height: 29px;
+	/*background: #40903A;*/
+	float: left;
+	/*margin:0 1px 1px 0;*/
+}
+.qiang{
+	background: url(../image/caoc.jpg) no-repeat;
+}
+.qiangs{
+	background: url(../image/huahua.jpg) no-repeat;
+}
+
+.bian{
+	background: none;
+}
+
+.snake{
+	background: #3F51B5;
+	border-radius: 10%;
+}
+.food{
+	background: #FF9800;
+}
+
+.over{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: none;
+	/*background-image: url(../image/load.jpg);*/
+}
+.gameover{
+	width: 600px;		
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	background: white;
+	border: 2px solid black;
+	height: 600px;
+}
+.shanpin{
+	display: none;
+}
+.back{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+
+}
+.backs img{
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+}
+.back .zhezhao{
+	width: 900px;
+	height: 500px;
+	position: absolute;
+	margin: auto;  
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: #070910;
+	opacity: 0.7;
+}
+.gushi{
+	width: 800px;
+	height: 500px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.a{
+	font-size: 35px;
+	font-weight: 700;
+	color: white;
+	letter-spacing: 5px;
+	word-spacing:8px
+}
+.pingtai{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+	background-image: url(../image/pingtai.jpg);
+}
+.green{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background-image: url(../image/green5.jpg);
+	display: none;
+}
+
+.green .shangmian{
+	width: 352px;
+	height: 75px;
+	top: 72px;
+	left:487px;
+	position:absolute;
+	background: white;
+	opacity: 1;
+}
+.green .xiamian{
+	width: 495px;
+	height: 71px;
+	top: 218px;
+	left: 420px;
+	position:absolute;
+	background: white;
+	opacity: 1;
+
+}
+.green .next1{
+	width: 90px;
+	height: 91px;
+	top: 560px;
+	left: 1250px;
+	position:absolute;
+	background: white;
+	opacity: 1;
+	cursor: pointer;
+}
+.green1{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background-image: url(../image/green4.jpg);
+	display: none;
+}
+
+.green1 .shangmian{
+	width: 645px;
+	height: 75px;
+	top: 218px;
+	left: 621px;
+	position:absolute;
+	background: white;
+	opacity: 1;
+}
+.green1 .xiamian{
+	width: 600px;
+	height: 71px;
+	top: 410px;
+	left: 730px;
+	position:absolute;
+	background: white;
+	opacity: 1;
+
+}
+.green1 .next2{
+	width: 90px;
+	height: 91px;
+	top: 560px;
+	left: 1250px;
+	position:absolute;
+	background: white;
+	opacity: 1;
+	cursor: pointer;
+}
+
+.green2{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background-image: url(../image/green6.jpg);
+	display: none;
+}
+
+.green3{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background-image: url(../image/green4.jpg);
+	display: none;
+}
